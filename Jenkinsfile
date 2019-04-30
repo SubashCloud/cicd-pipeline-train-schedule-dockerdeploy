@@ -1,4 +1,4 @@
-ppipeline {
+pipeline {
     agent any
     stages {
         stage('Build') {
@@ -14,7 +14,7 @@ ppipeline {
             }
             steps {
                 script {
-                    app = docker.build("willbla/train-schedule")
+                    app = docker.build("sdhdevops/train-schedule")
                     app.inside {
                         sh 'echo $(curl localhost:8080)'
                     }
